@@ -84,7 +84,7 @@ function eventHandle(sender, event){
 
 		var entity = event.message.nlp.entities
 			
-		console.log('MSH LOG : ' + response)
+		
 		
 			if(entity.greetings && entity.greetings[0].confidence > 0.7)	{			
 
