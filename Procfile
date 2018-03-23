@@ -1,1 +1,1 @@
-node index_with_db.js
+node index.js
