@@ -231,5 +231,5 @@ function insertLog(sender, msgData, time_stamp){
 }
 
 app.listen(process.env.PORT || 5000, function () {
-  console.log('OCL test messenger app listening on port 5000!')
+  console.log('OCL db test messenger app listening on port 5000!')
 })
