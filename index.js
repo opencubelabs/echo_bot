@@ -78,7 +78,7 @@ function authUser(sender, event){
                var data = JSON.parse(body)
 
                if(data.error){
-                  sendTextMessage(sender, 'Error authenticating', 'error')
+                  sendMessage(sender, {'text':'Error authenticating'}, Date.now())
                }else{
                   var cursor = db.collection('fb_user_profile').insertOne({
                      "first_name": data.first_name,
@@ -96,7 +96,7 @@ function authUser(sender, event){
                      "score": 0
                   }, function(err){
                      if(err){
-                       sendTextMessage(sender, 'Error authenticating', 'error')
+                       sendMessage(sender, {'text':'Error authenticating'}, Date.now())
                     }else{
                        eventHandle(sender, event)
                     }
@@ -225,7 +225,7 @@ function insertLog(sender, msgData, time_stamp){
 	MongoClient.connect(url, function(err, client) {
 
 		var db = client.db('heroku_ps6w5wqb')
-		
+
 		var cursor = db.collection('fb_msg_log').insertOne({
 			"fb_id": parseInt(sender),
 			"msgData": msgData,
